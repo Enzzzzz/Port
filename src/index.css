@@ -1,27 +1,12 @@
 @import "tailwindcss";
-
-/* =====================
-   Theme collors 
-   ===================== */
-
-/* =====================
-   Theme for a RED Background
-
-  --color-primary: #fc8484;
-  --color-secondary: #84d4fc;
-  --color-tertiary: #1a1a1a;
-  --color-accent: #f55959;
-  --color-hover: #fc6f6f;
-  --color-text: #2b1e0f;
-   ===================== */
    
 @theme {
-  --color-primary: #8c82fc;
-  --color-secondary: #74d2ff;
-  --color-tertiary: #0b0b23;
-  --color-accent: #ffb870;
-  --color-hover: #7a74e8;
-  --color-text: #e9ecff;
+  --color-primary: #4caf50;
+  --color-secondary: #8bc34a;
+  --color-tertiary: #102410;
+  --color-accent: #ffd54f;
+  --color-hover: #66bb6a;
+  --color-text: #e8f5e9;  
   --color-dimWhite: rgba(255, 255, 255, 0.7);
   --color-dimBlue: rgba(9, 151, 124, 0.1);
   --color-dimRed: rgba(151, 9, 49, 0.1);
@@ -57,6 +42,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Kenyan Coffee';
+  src: url('/fonts/KenyanCoffee.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer components {
   .navbutton {
     @apply rounded-md text-lg cursor-pointer font-medium py-2 px-4;
@@ -75,8 +67,8 @@
   background-image: linear-gradient(
     transparent 0%,
     transparent 90%,
-    #ffffff 90%,
-    #bcb9ff 100%
+    #66bb6a 90%,
+    #071a05 100%
   );
   background-repeat: no-repeat;
   background-size: 0% 100%;
@@ -106,7 +98,7 @@
       #5997f5 42.04%,
       #377de7 55.12%,
       #1557bb 71.54%,
-      #011f4b 100%
+      #021127 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -138,27 +130,27 @@
     );
   }
 
-    .bg-blue-gradient {
+    .bg-green-gradient {
     background: linear-gradient(
       157.81deg,
-      #c3c9ff -43.27%,
-      #8486fc -21.24%,
-      #5c59f5 12.19%,
-      #3a37e7 29.82%,
-      #1815bb 51.94%,
-      #01084b 90.29%
+      #0e300a -43.27%,
+      #0e2e0e -21.24%,
+      #031b02 12.19%,
+      #02200a 29.82%,
+      #071108 51.94%,
+      #070f08 90.29%
     );
   }
 
-  .bg-blue-gradient-reverse {
+  .bg-green-gradient-reverse {
     background: linear-gradient(
       157.81deg,
-      #01084b -43.27%,
-      #1815bb -21.24%,
-      #3a37e7 12.19%,
-      #5c59f5 29.82%,
-      #8486fc 51.94%,
-      #c3c9ff 90.29%
+      #070f08 -43.27%,
+      #071108 -21.24%,
+      #02200a 12.19%,
+      #031b02 29.82%,
+      #0e2e0e 51.94%,
+      #0e300a 90.29%
     );
   }
 }
@@ -171,6 +163,9 @@
 
   .font-felix {
     font-family: 'Felix Titling', serif;
+  }
+  .font-kenyan {
+    font-family: 'Kenyan Coffee', serif;
   }
 
   .text-primary { color: var(--color-primary); }

@@ -3,7 +3,6 @@ import { close, menu } from "../assets";
 import { navLinks } from "../constants";
 import Logo from "/Logo.jpg";
 import Logo2 from "/Logo2.jpg";
-import { HiLanguage } from 'react-icons/hi2';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -60,7 +59,7 @@ const Navbar = () => {
             key={nav.id}
             className={`font-poppins font-extrabold cursor-pointer text-[16px] sm:text-[18px] lg:text-[20px] ${
               index === navLinks.lenght - 1 ? "mr-0" : "mr-3 md:mr-10 lg:mr-12"
-            } ${textColor} hover:text-white sub`}
+            } ${textColor} hover:text-text sub`}
           >
             {index === 0 ? (
               <a href={`/${nav.id}`}>{nav.title}</a>
@@ -75,7 +74,7 @@ const Navbar = () => {
         <img
           src={toggle ? close : menu}
           alt="menu"
-          className="w-[24px] h-[24px] object-contain"
+          className="w-[24px] h-[24px] object-contain text-"
           onClick={() => setToggle((prev) => !prev)}
         />
 
@@ -85,16 +84,16 @@ const Navbar = () => {
           } sm:hidden`}
           onClick={() => setToggle(false)}
         >
-          <div className="flex flex-col justify-between items-end p-6 bg-primary/55 border border-secondary/50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-lg sidebar"
+          <div className="flex flex-col justify-between items-end p-6 bg-primary/20 border border-secondary/50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-lg sidebar"
           onClick={(e) => e.stopPropagation()}
           >
             <ul className="list-none flex-col justify-end items-center flex-1">
               {navLinks.map((nav, index) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-nome cursor-pointer text-[16px] ${
+                  className={`font-poppins font-semibold cursor-pointer text-[16px] ${
                     index === navLinks.length - 1 ? "mb-0" : "mb-4"
-                  } text-white`}
+                  } text-text`}
                   onClick={() => setToggle(false)}
                 >
                   {index === 0 ? (
@@ -105,12 +104,6 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <button
-              className="text-white/80 hover:text-white"
-              onClick={() => setToggle(false)}
-            >
-              Fechar
-            </button>
           </div>
         </div>
       </div>
