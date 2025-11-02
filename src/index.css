@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* =====================
+   Theme collors 
+   ===================== */
+
+/* =====================
+   Theme for a RED Background
+
+  --color-primary: #fc8484;
+  --color-secondary: #84d4fc;
+  --color-tertiary: #1a1a1a;
+  --color-accent: #f55959;
+  --color-hover: #fc6f6f;
+  --color-text: #2b1e0f;
+   ===================== */
+   
+@theme {
+  --color-primary: #8c82fc;
+  --color-secondary: #74d2ff;
+  --color-tertiary: #0b0b23;
+  --color-accent: #ffb870;
+  --color-hover: #7a74e8;
+  --color-text: #e9ecff;
+  --color-dimWhite: rgba(255, 255, 255, 0.7);
+  --color-dimBlue: rgba(9, 151, 124, 0.1);
+  --color-dimRed: rgba(151, 9, 49, 0.1);
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-felix: "Felix Titling", serif;
+
+  --breakpoint-xs: 480px;
+  --breakpoint-ss: 620px;
+  --breakpoint-sm2: 740px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1060px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-2xlg: 1500px;
+  --breakpoint-xl: 1700px;
+  --breakpoint-xxl: 2300px;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-tertiary);
+    color: var(--color-dimWhite);
+    font-family: 'Poppins', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+@font-face {
+  font-family: 'Felix Titling';
+  src: url('/fonts/Felixti.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer components {
+  .navbutton {
+    @apply rounded-md text-lg cursor-pointer font-medium py-2 px-4;
+    color: var(--color-primary);
+    transition: color 0.3s;
+  }
+
+  .btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-tertiary);
+    @apply py-2 px-4 rounded-md font-semibold;
+    transition: background-color 0.3s;
+  }
+
+  .sub {
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 90%,
+    #ffffff 90%,
+    #bcb9ff 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position-x: right;
+  transition: background-size 300ms;
+}
+
+.sub:hover {
+  background-size: 100% 100%;
+  background-position-x: left;
+}
+
+.section {
+  height: 100svh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  justify-items: center;
+}
+
+  .text-gradient {
+    background: radial-gradient(
+      64.18% 64.18% at 71.16% 35.69%,
+      #c3dbff 0.89%,
+      #84b4fc 17.23%,
+      #5997f5 42.04%,
+      #377de7 55.12%,
+      #1557bb 71.54%,
+      #011f4b 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .bg-red-gradient {
+    background: linear-gradient(
+      157.81deg,
+      #ffc3c3 -43.27%,
+      #fc8484 -21.24%,
+      #f55959 12.19%,
+      #e73737 29.82%,
+      #bb1515 51.94%,
+      #4b0101 90.29%
+    );
+  }
+
+  .bg-red-gradient-reverse {
+    background: linear-gradient(
+      157.81deg,
+      #4b0101 -43.27%,
+      #bb1515 -21.24%,
+      #e73737 12.19%,
+      #f55959 29.82%,
+      #fc8484 51.94%,
+      #ffc3c3 90.29%
+    );
+  }
+
+    .bg-blue-gradient {
+    background: linear-gradient(
+      157.81deg,
+      #c3c9ff -43.27%,
+      #8486fc -21.24%,
+      #5c59f5 12.19%,
+      #3a37e7 29.82%,
+      #1815bb 51.94%,
+      #01084b 90.29%
+    );
+  }
+
+  .bg-blue-gradient-reverse {
+    background: linear-gradient(
+      157.81deg,
+      #01084b -43.27%,
+      #1815bb -21.24%,
+      #3a37e7 12.19%,
+      #5c59f5 29.82%,
+      #8486fc 51.94%,
+      #c3c9ff 90.29%
+    );
+  }
+}
+
+
+@layer utilities {
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-tertiary { background-color: var(--color-tertiary); }
+
+  .font-felix {
+    font-family: 'Felix Titling', serif;
+  }
+
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .text-tertiary { color: var(--color-tertiary); }
+  .text-accent { color: var(--color-accent); }
+  .text-dimWhite { color: var(--color-dimWhite); }
+  .text-dimBlue { color: var(--color-dimBlue); }
+  .text-dimRed { color: var(--color-dimRed); }
+}
