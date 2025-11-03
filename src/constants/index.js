@@ -1,19 +1,15 @@
 export const navLinks = [
     {
-      id: "page2",
-      title: "Page 2",
-    },
-    {
-      id: "firstLayer",
-      title: "Section 1",
+      id: "---",
+      title: "- - -",
     },
     {
       id: "secondLayer",
-      title: "Section 2",
+      title: "Projetos",
     },
     {
       id: "id4",
-      title: "A Title",
+      title: "Habilidades",
     },
   ];
   
