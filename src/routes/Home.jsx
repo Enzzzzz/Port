@@ -1,8 +1,31 @@
+import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
 import Logo from "/Logo2-Sem-Fundo.png";
-import Logo2 from "/Logo-Sem-Fundo.png";
 
 function Home() {
+
+  const textRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
+
+    return () => {
+      if (textRef.current) observer.unobserve(textRef.current);
+    };
+  }, []);
+
   return (
     <div className="">
       <Navbar />
@@ -13,10 +36,15 @@ function Home() {
         >
             <img
               src={Logo}
-              className="w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl filter drop-shadow-[0_0_15px_rgba(0,255,100,0.5)]"
+              className="w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl drop-shadow-[0_0_20px_#00ff88] hover:drop-shadow-[0_0_35px_#00ffcc] transition-all duration-700"
               alt="Logo"
             />
-          <div className="animate-fade-in-left">
+          <div
+            ref={textRef}
+            className={`transition-all duration-700 ${
+              isVisible ? "animate-fade-in-left opacity-100" : "animate-fade-out-left opacity-0"
+            }`}
+          >
           <h1 className="text-3xl font-kenyan text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-green-900 via-emerald-500  to-green-900 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient">
             Welcome to my
             <p className="text-accent cursor-pointer font-kenyan font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
