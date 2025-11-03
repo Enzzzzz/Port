@@ -59,16 +59,23 @@ function Home() {
           id="secondLayer"
           className="section bg-green-gradient-reverse flex flex-col sm2:-space-y-16"
         >
+          <div>
+            <h1 className="font-kenyan text-text font-bold text-5xl mb-5">
+              Projects
+            </h1>
+          </div>
+          <div className="flex flex-col items-center p-2 border">
           <img
             src={Logo}
-            className="mt-24 sm2:mt-10 w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px]"
+            className="border w-52 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px]"
           />
-          <h1 className="text-3xl text-center m-10 font-extrabold text-text sm:text-4xl lg:text-5xl xl:text-7xl font-kenyan">
+          <p className="border text-3xl text-center m-10 font-extrabold text-text sm:text-4xl lg:text-5xl xl:text-7xl font-kenyan">
             Welcome to my
             <p className="text-accent font-kenyan font-semibold hover:animate-none animate-pulse">
               Portfolio
             </p>
-          </h1>
+          </p>
+          </div>
         </section>
       </div>
     </div>
