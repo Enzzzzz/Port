@@ -11,19 +11,20 @@ function Home() {
           id="firstLayer"
           className="section bg-green-gradient flex flex-col sm2:-space-y-16"
         >
-          <div className="mt-24 hover:shadow-accent hover:shadow-xl sm2:hover:shadow-none hover:duration-200 hover:scale-101 sm2:mt-10 md:-mt-32 border-3 border-accent/50 rounded-4xl sm2:border-0 inline-block sm2:hidden">
             <img
               src={Logo}
-              className="w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl"
+              className="w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl filter drop-shadow-[0_0_15px_rgba(0,255,100,0.5)]"
               alt="Logo"
             />
-          </div>
-          <h1 className="text-3xl font-kenyan text-center m-10 font-extrabold text-text sm:text-4xl lg:text-5xl xl:text-7xl">
+          <div className="animate-fade-in-left">
+          <h1 className="text-3xl font-kenyan text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-green-900 via-emerald-500  to-green-900 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient">
             Welcome to my
-            <p className="text-accent font-kenyan font-extrabold hover:animate-none animate-pulse">
+            <p className="text-accent cursor-pointer font-kenyan font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
+            onClick={() => document.querySelector('#secondLayer')?.scrollIntoView({ behavior: 'smooth' })}>
               Portfolio
             </p>
           </h1>
+          </div>
         </section>
         <div className="h-32 bg-gradient-to-b from-[#070f08] to-[#0e300a]"></div>
         <section
@@ -34,9 +35,9 @@ function Home() {
             src={Logo}
             className="mt-24 sm2:mt-10 w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px]"
           />
-          <h1 className="text-3xl text-poppins text-center m-10 font-extrabold text-text sm:text-4xl lg:text-5xl xl:text-7xl">
+          <h1 className="text-3xl text-center m-10 font-extrabold text-text sm:text-4xl lg:text-5xl xl:text-7xl font-kenyan">
             Welcome to my
-            <p className="text-accent font-poppins font-semibold hover:animate-none animate-pulse">
+            <p className="text-accent font-kenyan font-semibold hover:animate-none animate-pulse">
               Portfolio
             </p>
           </h1>
