@@ -1,13 +1,14 @@
 import React from "react";
 import { useState } from "react";
 
-const ProjectCard = ({
+const ProjectCardLeft = ({
   image,
   title,
   description,
   link,
   fadeRight,
   fadeLeft,
+  reverse = false,
 }) => {
     const [isImageOpen, setIsImageOpen] = useState(false);
 
@@ -22,17 +23,23 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="flex flex-col sm2:flex-row gap-4 w-[90%] items-center p-4">
+    <div
+      className={`flex flex-col sm2:flex-row ${
+        reverse ? "sm2:flex-row-reverse" : ""
+      } gap-4 w-[90%] items-center p-4`}
+    >
       <div
-        className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#145f24] transition-all duration-700"
+        className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#145f24] transition-all duration-700 cursor-pointer"
         onClick={handleOpenImage}
-        >
+      >
         <img
           src={image}
-          className={`w-full h-full object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110 hover:opacity-90 hover:blur-xs ${fadeRight} cursor-pointer bg-black`}
+          className={`w-full h-full object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110 hover:opacity-90 hover:blur-xs ${
+            reverse ? fadeLeft : fadeRight
+          } bg-black`}
           alt="project preview"
         />
-        </div>
+      </div>
 
         {isImageOpen && (
           <div
@@ -56,15 +63,31 @@ const ProjectCard = ({
       
 
       <div
-        className={`p-2 group ${fadeLeft} sm2:flex sm2:flex-col sm2:justify-between sm2:h-full ipad:justify-center ipad:max-w-[50%] md:max-w-[40%]`}
+        className={`p-2 group ${
+          reverse ? fadeRight : fadeLeft
+        } sm2:flex sm2:flex-col sm2:justify-between sm2:h-full ipad:justify-center ipad:max-w-[50%] md:max-w-[40%] ${
+          reverse ? "sm2:text-right" : "sm2:text-left"
+        }`}
       >
-        <h2 className="text-2xl text-center sm2:text-left font-bebas text-accent sm:text-4xl lg:text-5xl xl:text-7xl">
+        <h2
+          className={`text-2xl text-center sm2:text-4xl lg:text-5xl xl:text-7xl font-bebas text-accent ${
+            reverse ? "sm2:text-right" : "sm2:text-left"
+          }`}
+        >
           {title}
         </h2>
-        <p className="text-text/80 leading-5 text-lg ipad:text-xl text-justify font-bebas">
+        <p
+          className={`text-text/80 leading-5 text-lg ipad:text-xl text-justify font-bebas ${
+            reverse ? "sm2:text-right" : "sm2:text-left"
+          }`}
+        >
           {description}
         </p>
-        <div className="text-left mt-2">
+        <div
+          className={`mt-2 ${
+            reverse ? "text-right" : "text-left"
+          }`}
+        >
           <a
             href={link}
             target="_blank"
@@ -79,4 +102,4 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export default ProjectCardLeft;

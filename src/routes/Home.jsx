@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
-import ProjectCard from "../components/projectCards";
+import ProjectCardLeft from "../components/projectCardsLeft";
 
 import Logo from "/Logo2-Sem-Fundo.png";
 import AlmiroWeb from "/Projects/almiro.png";
@@ -96,7 +96,7 @@ function Home() {
 
         <section
           id="secondLayer"
-          className="pt-10 section2 bg-green-gradient-reverse flex flex-col sm2:-space-y-16"
+          className="pt-10 section2 bg-green-gradient-reverse flex gap-5 sm2:gap-16 flex-col sm2:-space-y-16"
           ref={section2Ref}
         >
           <div className="mb-5 sm2:mb-2">
@@ -106,14 +106,14 @@ function Home() {
               Projetos
             </h1>
           </div>
-          <ProjectCard
+          <ProjectCardLeft reverse={true}
             image={AlmiroWeb}
             title="Almiro Fragoso Advocacia"
             description={
               <>
                 Landing page de advocacia multi-page desenvolvida em{" "}
-                <span className="text-emerald-400">ReactJS</span> e{" "}
-                <span className="text-emerald-400">TailwindCSS</span>, com
+                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
+                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
                 design responsivo e links diretos para contato via WhatsApp.
               </>
             }
@@ -122,7 +122,7 @@ function Home() {
             fadeLeft={fadeLeft}
           />
 
-          <ProjectCard
+          <ProjectCardLeft
             image={YulBot}
             title="Discord Bot Website"
             description={
@@ -138,14 +138,14 @@ function Home() {
             fadeLeft={fadeLeft}
           />
 
-          <ProjectCard
+          <ProjectCardLeft reverse={true}
             image={Bloxstore}
             title="Almiro Fragoso Advocacia"
             description={
               <>
                 Landing page de advocacia multi-page desenvolvida em{" "}
-                <span className="text-emerald-400">ReactJS</span> e{" "}
-                <span className="text-emerald-400">TailwindCSS</span>, com
+                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
+                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
                 design responsivo e links diretos para contato via WhatsApp.
               </>
             }
