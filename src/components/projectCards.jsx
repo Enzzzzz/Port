@@ -28,12 +28,12 @@ const ProjectCard = ({
     <div
       className={`flex flex-col sm2:flex-row z-10 ${
         reverse
-          ? "sm2:flex-row-reverse sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]"
-          : "sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]"
+          ? "sm2:flex-row-reverse sm2:bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.3),_transparent_70%)]"
+          : "sm2:bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.3),_transparent_70%)]"
       } gap-4 w-[90%] items-center p-4 overflow-visible`}
     >
       <div
-        className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#145f24] transition-all duration-700 cursor-pointer"
+        className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#f1f1f1] transition-all duration-700 cursor-pointer"
         onClick={handleOpenImage}
       >
         <img
