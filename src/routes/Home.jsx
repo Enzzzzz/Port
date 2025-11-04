@@ -47,10 +47,10 @@ function Home() {
                 : "animate-fade-out-left opacity-0"
             }`}
           >
-            <h1 className="text-3xl font-kenyan text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-green-900 via-emerald-500  to-green-900 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient">
+            <h1 className="text-4xl font-bebas text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-green-900 via-emerald-500  to-green-900 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient">
               Welcome to my
               <p
-                className="text-accent cursor-pointer font-kenyan font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
+                className="text-accent cursor-pointer font-felix font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
                 onClick={() =>
                   document
                     .querySelector("#secondLayer")
@@ -68,24 +68,45 @@ function Home() {
           className="section bg-green-gradient-reverse flex flex-col sm2:-space-y-16"
         >
           <div>
-            <h1 className="font-kenyan text-text font-bold text-5xl mb-5">
+            <h1 className="font-bebas text-text font-bold text-5xl mb-5">
               Projects
             </h1>
           </div>
-          <div className="flex flex-col w-[90%] items-center p-4 border group">
+          <div className="flex flex-col gap-4 w-[90%] items-center p-4">
             <div className="w-[300px] h-[300px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#145f24] transition-all duration-700">
               <img
                 src={AlmiroWeb}
                 className="w-full h-full object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110 hover:opacity-90 hover:blur-xs"
               />
             </div>
-
-            <p className="border text-3xl text-center m-10 font-extrabold text-text sm:text-4xl lg:text-5xl xl:text-7xl font-kenyan">
-              Almiro Fragoso Advocacia
-              <p className="text-accent font-kenyan font-semibold hover:animate-none animate-pulse">
-                Cliente Real
-              </p>
-            </p>
+            <div className="p-2 group">
+              <h2 className="text-2xl text-center font-bebas text-accent sm:text-4xl lg:text-5xl xl:text-7xl">
+                Almiro Fragoso Advocacia
+                <p className="text-text/80 text-lg text-justify font-bebas">
+                  Landing page de advocacia multi-page desenvolvida em{" "}
+                  <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">
+                    ReactJS
+                  </span>{" "}
+                  e{" "}
+                  <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">
+                    TailwindCSS
+                  </span>
+                  , com design responsivo e links diretos para contato via
+                  WhatsApp com o advogado responsável.
+                </p>
+                <div className="text-left mt-2">
+                  <a
+                  href="https://www.almirofragosoadvocacia.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl font-bebas text-emerald-400 hover:text-accent hover:[text-shadow:0_0_10px_rgba(59,130,246,0.9)] transition-all duration-300 inline-block cursor-pointer"
+                >
+                  Ir para o site
+                </a>
+                </div>
+                
+              </h2>
+            </div>
           </div>
         </section>
       </div>

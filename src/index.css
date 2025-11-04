@@ -85,6 +85,13 @@
 }
 
 @font-face {
+  font-family: 'Bebas Neue';
+  src: url('/fonts/BebasNeue.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Kenyan Coffee';
   src: url('/fonts/KenyanCoffee.otf') format('opentype');
   font-weight: normal;
@@ -206,7 +213,10 @@
     font-family: 'Felix Titling', serif;
   }
   .font-kenyan {
-    font-family: 'Kenyan Coffee', serif;
+    font-family: 'Kenyan Coffee', sans-serif;
+  }
+  .font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
   }
 
   .text-primary { color: var(--color-primary); }
