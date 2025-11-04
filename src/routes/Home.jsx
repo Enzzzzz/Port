@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
+import ProjectCard from "../components/projectCards";
 import Logo from "/Logo2-Sem-Fundo.png";
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
@@ -101,93 +102,37 @@ function Home() {
               Projetos
             </h1>
           </div>
-          <div className="flex flex-col sm2:flex-row gap-4 w-[90%] items-center p-4">
-            <div className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#145f24] transition-all duration-700">
-              <a
-                href="https://www.almirofragosoadvocacia.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={AlmiroWeb}
-                  className={`w-full h-full object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110 hover:opacity-90 hover:blur-xs ${fadeRight} cursor-pointer`}
-                />
-              </a>
-            </div>
-            <div
-              className={`p-2 group ${fadeLeft} sm2:flex sm2:flex-col sm2:justify-between sm2:h-full ipad:justify-center ipad:max-w-[50%] md:max-w-[40%]`}
-            >
-              <h2 className="text-2xl text-center sm2:text-left font-bebas text-accent sm:text-4xl lg:text-5xl xl:text-7xl">
-                Almiro Fragoso Advocacia
-              </h2>
-              <p className="text-text/80 leading-5 text-lg ipad:text-xl text-justify font-bebas">
+          <ProjectCard
+            image={AlmiroWeb}
+            title="Almiro Fragoso Advocacia"
+            description={
+              <>
                 Landing page de advocacia multi-page desenvolvida em{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">
-                  ReactJS
-                </span>{" "}
-                e{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">
-                  TailwindCSS
-                </span>
-                , com design responsivo e links diretos para contato via
-                WhatsApp com o advogado responsável.
-              </p>
-              <div className="text-left mt-2">
-                <a
-                  href="https://www.almirofragosoadvocacia.com.br/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-2xl font-bebas text-emerald-400 hover:text-accent hover:[text-shadow:0_0_10px_rgba(59,130,246,0.9)] transition-all duration-300 inline-block cursor-pointer"
-                >
-                  Ir para o site
-                </a>
-              </div>
-            </div>
-          </div>
+                <span className="text-emerald-400">ReactJS</span> e{" "}
+                <span className="text-emerald-400">TailwindCSS</span>, com
+                design responsivo e links diretos para contato via WhatsApp.
+              </>
+            }
+            link="https://www.almirofragosoadvocacia.com.br/"
+            fadeRight={fadeRight}
+            fadeLeft={fadeLeft}
+          />
 
-          <div className="flex flex-col sm2:flex-row gap-4 w-[90%] items-center p-4">
-            <div className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#145f24] transition-all duration-700">
-              <a
-                href="https://yulbot.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={YulBot}
-                  className={`w-full h-full object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110 hover:opacity-90 hover:blur-xs ${fadeRight} cursor-pointer`}
-                />
-              </a>
-            </div>
-            <div
-              className={`p-2 group ${fadeLeft} sm2:flex sm2:flex-col sm2:justify-between sm2:h-full ipad:justify-center ipad:max-w-[50%] md:max-w-[40%]`}
-            >
-              <h2 className="text-2xl text-center sm2:text-left font-bebas text-accent sm:text-4xl lg:text-5xl xl:text-7xl">
-                Discord Bot Website
-              </h2>
-              <p className="text-text/80 leading-5 text-lg ipad:text-xl text-justify font-bebas">
-                Landing page de advocacia multi-page desenvolvida em{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">
-                  ReactJS
-                </span>{" "}
-                e{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">
-                  TailwindCSS
-                </span>
-                , com design responsivo e links diretos para contato via
-                WhatsApp com o advogado responsável.
-              </p>
-              <div className="text-left mt-2">
-                <a
-                  href="https://yulbot.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-2xl font-bebas text-emerald-400 hover:text-accent hover:[text-shadow:0_0_10px_rgba(59,130,246,0.9)] transition-all duration-300 inline-block cursor-pointer"
-                >
-                  Ir para o site
-                </a>
-              </div>
-            </div>
-          </div>
+          <ProjectCard
+            image={YulBot}
+            title="Discord Bot Website"
+            description={
+              <>
+                Website moderno para bot de Discord feito em{" "}
+                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
+                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
+                design limpo e animações suaves.
+              </>
+            }
+            link="https://yulbot.vercel.app/"
+            fadeRight={fadeRight}
+            fadeLeft={fadeLeft}
+          />
         </section>
       </div>
     </div>
