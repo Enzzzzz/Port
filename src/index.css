@@ -13,11 +13,14 @@
 
   --font-poppins: "Poppins", sans-serif;
   --font-felix: "Felix Titling", serif;
+  --font-kenyan: "Kenyan Coffee", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
 
   --breakpoint-xs: 480px;
   --breakpoint-ss: 620px;
   --breakpoint-sm2: 740px;
   --breakpoint-sm: 768px;
+  --breakpoint-ipad: 810px;
   --breakpoint-md: 1060px;
   --breakpoint-lg: 1200px;
   --breakpoint-2xlg: 1500px;
@@ -170,7 +173,6 @@
 }
 
 .section2 {
-  height: 100svh;
   display: grid;
   justify-content: center;
   align-items: center;
