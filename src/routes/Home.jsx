@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
 import ProjectCard from "../components/projectCards";
+
 import Logo from "/Logo2-Sem-Fundo.png";
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
+import Bloxstore from "/Projects/bloxstore.png"
 
 function Home() {
   const textRef = useRef(null);
@@ -11,6 +13,8 @@ function Home() {
 
   const section2Ref = useRef(null);
   const [isVisible2, setIsVisible2] = useState(false);
+
+  
 
   const fadeLeft = isVisible2
     ? "animate-fade-in-left opacity-100"
@@ -130,6 +134,22 @@ function Home() {
               </>
             }
             link="https://yulbot.vercel.app/"
+            fadeRight={fadeRight}
+            fadeLeft={fadeLeft}
+          />
+
+          <ProjectCard
+            image={Bloxstore}
+            title="Almiro Fragoso Advocacia"
+            description={
+              <>
+                Landing page de advocacia multi-page desenvolvida em{" "}
+                <span className="text-emerald-400">ReactJS</span> e{" "}
+                <span className="text-emerald-400">TailwindCSS</span>, com
+                design responsivo e links diretos para contato via WhatsApp.
+              </>
+            }
+            link="https://www.almirofragosoadvocacia.com.br/"
             fadeRight={fadeRight}
             fadeLeft={fadeLeft}
           />
