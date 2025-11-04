@@ -79,7 +79,7 @@ function Home() {
             <h1 className="text-4xl font-bebas text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-green-900 via-emerald-500  to-green-900 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient">
               Welcome to my
               <p
-                className="text-accent cursor-pointer font-felix font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
+                className="text-accent cursor-pointer font- font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
                 onClick={() =>
                   document
                     .querySelector("#secondLayer")
@@ -96,7 +96,7 @@ function Home() {
 
         <section
           id="secondLayer"
-          className="pt-10 section2 bg-green-gradient-reverse flex gap-5 sm2:gap-16 flex-col sm2:-space-y-16"
+          className="pt-10 section2 bg-green-gradient-reverse flex flex-col"
           ref={section2Ref}
         >
           <div className="mb-5 sm2:mb-2">
@@ -109,11 +109,12 @@ function Home() {
           <ProjectCard reverse={true}
             image={AlmiroWeb}
             title="Almiro Fragoso Advocacia"
+            titleColor="#2634f8"
             description={
               <>
                 Landing page de advocacia multi-page desenvolvida em{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
+                <span className="text-blue-700 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
+                <span className="text-blue-700 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
                 design responsivo e links diretos para contato via WhatsApp.
               </>
             }
@@ -125,11 +126,12 @@ function Home() {
           <ProjectCard
             image={YulBot}
             title="Discord Bot Website"
+            titleColor="#a672ff"
             description={
               <>
                 Website moderno multi-page para bot de Discord feito em{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
+                <span className="text-purple-400 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
+                <span className="text-purple-400 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
                 design limpo e animações suaves, com sistema de porcentagem de desenvolvimento e commits em tempo real.
               </>
             }
@@ -138,14 +140,15 @@ function Home() {
             fadeLeft={fadeLeft}
           />
 
-          <ProjectCard reverse={true}
+          <ProjectCard reverse={true} isDev={true}
             image={Bloxstore}
             title="BloxStore"
+            titleColor="#7f0c96"
             description={
               <>
                 Loja virtual de Roblox feito em{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
-                <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
+                <span className="text-fuchsia-800 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
+                <span className="text-fuchsia-800 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
                 design responsivo com sistema de banco de dados para as funcionalidades de Registro e Login.
               </>
             }

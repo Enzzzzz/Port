@@ -9,10 +9,12 @@ const ProjectCard = ({
   fadeRight,
   fadeLeft,
   reverse = false,
+  isDev = false,
+  titleColor,
 }) => {
-    const [isImageOpen, setIsImageOpen] = useState(false);
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
-      const handleOpenImage = (e) => {
+  const handleOpenImage = (e) => {
     e.stopPropagation();
     setIsImageOpen(true);
   };
@@ -24,9 +26,11 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`flex flex-col sm2:flex-row ${
-        reverse ? "sm2:flex-row-reverse sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]" : "sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]"
-      } gap-4 w-[90%] items-center p-4`}
+      className={`flex flex-col sm2:flex-row z-10 ${
+        reverse
+          ? "sm2:flex-row-reverse sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]"
+          : "sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]"
+      } gap-4 w-[90%] items-center p-4 overflow-visible`}
     >
       <div
         className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#145f24] transition-all duration-700 cursor-pointer"
@@ -41,26 +45,25 @@ const ProjectCard = ({
         />
       </div>
 
-        {isImageOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center"
+      {isImageOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center"
+          onClick={handleCloseImage}
+        >
+          <button
+            className="absolute top-4 right-6 text-white text-3xl font-bold hover:text-emerald-400 transition"
             onClick={handleCloseImage}
           >
-            <button
-              className="absolute top-4 right-6 text-white text-3xl font-bold hover:text-emerald-400 transition"
-              onClick={handleCloseImage}
-            >
-              x
-            </button>
-            <img
-              src={image}
-              className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg object-contain cursor-pointer transition-all duration-300"
-              alt="full view"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        )}
-      
+            x
+          </button>
+          <img
+            src={image}
+            className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg object-contain cursor-pointer transition-all duration-300"
+            alt="full view"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       <div
         className={`p-2 group ${
@@ -70,9 +73,10 @@ const ProjectCard = ({
         }`}
       >
         <h2
-          className={`text-2xl text-center sm2:text-4xl lg:text-5xl xl:text-7xl font-bebas text-accent ${
+          className={`text-2xl text-center sm2:text-4xl lg:text-5xl xl:text-7xl font-bebas ${
             reverse ? "sm2:text-right" : "sm2:text-left"
           }`}
+          style={{ color: titleColor }}
         >
           {title}
         </h2>
@@ -83,19 +87,21 @@ const ProjectCard = ({
         >
           {description}
         </p>
-        <div
-          className={`mt-2 ${
-            reverse ? "text-right" : "text-left"
-          }`}
-        >
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl font-bebas text-emerald-400 hover:text-accent hover:[text-shadow:0_0_10px_rgba(59,130,246,0.9)] transition-all duration-300 inline-block cursor-pointer"
-          >
-            Ir para o site
-          </a>
+        <div className={`mt-2 ${reverse ? "text-right" : "text-left"}`}>
+          {isDev ? (
+            <span className="text-2xl font-bebas text-gray-400 italic cursor-not-allowed select-none">
+              Em desenvolvimento
+            </span>
+          ) : (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl font-bebas text-emerald-400 hover:text-accent hover:[text-shadow:0_0_10px_rgba(59,130,246,0.9)] transition-all duration-300 inline-block cursor-pointer"
+            >
+              Ir para o site
+            </a>
+          )}
         </div>
       </div>
     </div>
