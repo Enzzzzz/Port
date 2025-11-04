@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const ProjectCardLeft = ({
+const ProjectCard = ({
   image,
   title,
   description,
@@ -25,7 +25,7 @@ const ProjectCardLeft = ({
   return (
     <div
       className={`flex flex-col sm2:flex-row ${
-        reverse ? "sm2:flex-row-reverse" : ""
+        reverse ? "sm2:flex-row-reverse sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]" : "sm2:bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.2),_transparent_70%)]"
       } gap-4 w-[90%] items-center p-4`}
     >
       <div
@@ -102,4 +102,4 @@ const ProjectCardLeft = ({
   );
 };
 
-export default ProjectCardLeft;
+export default ProjectCard;

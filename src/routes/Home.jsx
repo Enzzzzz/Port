@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
-import ProjectCardLeft from "../components/projectCardsLeft";
+import ProjectCard from "../components/projectCards";
 
 import Logo from "/Logo2-Sem-Fundo.png";
 import AlmiroWeb from "/Projects/almiro.png";
@@ -56,12 +56,12 @@ function Home() {
       <div className="flex flex-col">
         <section
           id="firstLayer"
-          className="section bg-green-gradient flex flex-col sm2:-space-y-16"
+          className="section bg-green-gradient flex flex-col sm2:-space-y-16 "
         >
           <img
             src={Logo}
             ref={textRef}
-            className={` w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl drop-shadow-[0_0_20px_#00ff88] hover:drop-shadow-[0_0_35px_#00ffcc] transition-all duration-700 ${
+            className={`bg-[radial-gradient(circle_at_center,_rgba(0,255,204,0.1),_transparent_70%)] hover:bg-none w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl drop-shadow-[0_0_20px_#00ff88] hover:drop-shadow-[0_0_35px_#00ffcc] transition-all duration-700 ${
               isVisible
                 ? "animate-fade-in-right opacity-100"
                 : "animate-fade-out-left opacity-0"
@@ -92,7 +92,7 @@ function Home() {
           </div>
         </section>
 
-        <div className="h-32 bg-gradient-to-b from-[#070f08] to-[#0e300a]"></div>
+        <div className="h-32 bg-gradient-to-b from-[#070f08] to-[rgba(0,255,204,0.1)]"></div>
 
         <section
           id="secondLayer"
@@ -106,7 +106,7 @@ function Home() {
               Projetos
             </h1>
           </div>
-          <ProjectCardLeft reverse={true}
+          <ProjectCard reverse={true}
             image={AlmiroWeb}
             title="Almiro Fragoso Advocacia"
             description={
@@ -122,15 +122,15 @@ function Home() {
             fadeLeft={fadeLeft}
           />
 
-          <ProjectCardLeft
+          <ProjectCard
             image={YulBot}
             title="Discord Bot Website"
             description={
               <>
-                Website moderno para bot de Discord feito em{" "}
+                Website moderno multi-page para bot de Discord feito em{" "}
                 <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
                 <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
-                design limpo e animações suaves.
+                design limpo e animações suaves, com sistema de porcentagem de desenvolvimento e commits em tempo real.
               </>
             }
             link="https://yulbot.vercel.app/"
@@ -138,18 +138,18 @@ function Home() {
             fadeLeft={fadeLeft}
           />
 
-          <ProjectCardLeft reverse={true}
+          <ProjectCard reverse={true}
             image={Bloxstore}
-            title="Almiro Fragoso Advocacia"
+            title="BloxStore"
             description={
               <>
-                Landing page de advocacia multi-page desenvolvida em{" "}
+                Loja virtual de Roblox feito em{" "}
                 <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
                 <span className="text-emerald-400  group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
-                design responsivo e links diretos para contato via WhatsApp.
+                design responsivo com sistema de banco de dados para as funcionalidades de Registro e Login.
               </>
             }
-            link="https://www.almirofragosoadvocacia.com.br/"
+            link=""
             fadeRight={fadeRight}
             fadeLeft={fadeLeft}
           />
