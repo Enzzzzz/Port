@@ -78,7 +78,7 @@ const ProjectCard = ({
           {title}
         </h2>
         <p
-          className={`text-text/80 leading-5 text-lg ipad:text-xl text-justify font-bebas ${
+          className={`text-text/80 leading-5 md:leading-6 2xlg:leading-7 text-lg ipad:text-xl md:text-2xl 2xlg:text-3xl text-justify font-bebas ${
             reverse ? "sm2:text-right" : "sm2:text-left"
           }`}
         >
@@ -86,7 +86,7 @@ const ProjectCard = ({
         </p>
         <div className={`mt-2 ${reverse ? "text-right" : "text-left"}`}>
           {isDev ? (
-            <span className="text-2xl font-bebas text-gray-400 italic cursor-not-allowed select-none">
+            <span className="text-2xl md:text-3xl 2xlg:text-4xl font-bebas text-gray-400 italic cursor-not-allowed select-none">
               Em desenvolvimento
             </span>
           ) : (
@@ -94,7 +94,7 @@ const ProjectCard = ({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl font-bebas text-blue-50 hover:text-accent hover:[text-shadow:0_0_10px_rgba(255, 255, 255, 0.9)] transition-all duration-300 inline-block cursor-pointer"
+              className="text-2xl md:text-3xl 2xlg:text-4xl font-bebas text-blue-50 hover:text-accent hover:[text-shadow:0_0_10px_rgba(255, 255, 255, 0.9)] transition-all duration-300 inline-block cursor-pointer"
             >
               Ir para o site
             </a>
