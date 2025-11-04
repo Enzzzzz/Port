@@ -169,6 +169,15 @@
   justify-items: center;
 }
 
+.section2 {
+  height: 100svh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  justify-items: center;
+}
+
   .text-gradient {
     background: radial-gradient(
       64.18% 64.18% at 71.16% 35.69%,
