@@ -5,7 +5,7 @@ import ProjectCard from "../components/projectCards";
 import Logo from "/Logo2-Sem-Fundo.png";
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
-import Bloxstore from "/Projects/bloxstore.png"
+import Bloxstore from "/Projects/bloxstore.png";
 
 function Home() {
   const textRef = useRef(null);
@@ -13,8 +13,6 @@ function Home() {
 
   const section2Ref = useRef(null);
   const [isVisible2, setIsVisible2] = useState(false);
-
-  
 
   const fadeLeft = isVisible2
     ? "animate-fade-in-left opacity-100"
@@ -92,11 +90,9 @@ function Home() {
           </div>
         </section>
 
-        <div className="h-32 bg-gradient-to-b from-[#000000] to-[#f1f1f1]"></div>
-
         <section
           id="secondLayer"
-          className="pt-10 section2 bg-gray-gradient-reverse flex flex-col"
+          className="overflow-visible pt-10 section2 bg-gray-gradient-reverse flex flex-col"
           ref={section2Ref}
         >
           <div className="mb-5 sm2:mb-2">
@@ -106,16 +102,23 @@ function Home() {
               Projetos
             </h1>
           </div>
-          <ProjectCard reverse={true}
+          <ProjectCard
+            reverse={true}
             image={AlmiroWeb}
             title="Almiro Fragoso Advocacia"
-            titleColor="#2634f8"
+            titleColor="#ffffff"
             description={
               <>
                 Landing page de advocacia multi-page desenvolvida em{" "}
-                <span className="text-blue-700 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
-                <span className="text-blue-700 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
-                design responsivo e links diretos para contato via WhatsApp.
+                <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
+                  ReactJS
+                </span>{" "}
+                e{" "}
+                <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
+                  TailwindCSS
+                </span>
+                , com design responsivo e links diretos para contato via
+                WhatsApp.
               </>
             }
             link="https://www.almirofragosoadvocacia.com.br/"
@@ -126,13 +129,19 @@ function Home() {
           <ProjectCard
             image={YulBot}
             title="Discord Bot Website"
-            titleColor="#a672ff"
+            titleColor="#ffffff"
             description={
               <>
                 Website moderno multi-page para bot de Discord feito em{" "}
-                <span className="text-purple-400 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
-                <span className="text-purple-400 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
-                design limpo e animações suaves, com sistema de porcentagem de desenvolvimento e commits em tempo real.
+                <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)0.9)] transition-all duration-300">
+                  ReactJS
+                </span>{" "}
+                e{" "}
+                <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
+                  TailwindCSS
+                </span>
+                , com design limpo e animações suaves, com sistema de
+                porcentagem de desenvolvimento e commits em tempo real.
               </>
             }
             link="https://yulbot.vercel.app/"
@@ -140,16 +149,24 @@ function Home() {
             fadeLeft={fadeLeft}
           />
 
-          <ProjectCard reverse={true} isDev={true}
+          <ProjectCard
+            reverse={true}
+            isDev={true}
             image={Bloxstore}
             title="BloxStore"
-            titleColor="#7f0c96"
+            titleColor="#ffffff"
             description={
               <>
                 Loja virtual de Roblox feito em{" "}
-                <span className="text-fuchsia-800 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">ReactJS</span> e{" "}
-                <span className="text-fuchsia-800 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(59,130,246,0.9)] transition-all duration-300">TailwindCSS</span>, com
-                design responsivo com sistema de banco de dados para as funcionalidades de Registro e Login.
+                <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
+                  ReactJS
+                </span>{" "}
+                e{" "}
+                <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
+                  TailwindCSS
+                </span>
+                , com design responsivo com sistema de banco de dados para as
+                funcionalidades de Registro e Login.
               </>
             }
             link=""

@@ -26,14 +26,11 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`flex flex-col sm2:flex-row z-10 ${
-        reverse
-          ? "sm2:flex-row-reverse sm2:bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.3),_transparent_70%)]"
-          : "sm2:bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.3),_transparent_70%)]"
-      } gap-4 w-[90%] items-center p-4 overflow-visible`}
+      className={`relative flex flex-col sm2:flex-row gap-4 ${ reverse ? "sm2:flex-row-reverse sm2:bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.3),_transparent_70%)]" : "sm2:bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.3),_transparent_70%)]" } w-[90%] items-center p-4 overflow-visible`}
     >
+
       <div
-        className="w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#f1f1f1] transition-all duration-700 cursor-pointer"
+        className="relative z-10 w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl  overflow-hidden hover:drop-shadow-[0_0_8px_#f1f1f1] transition-all duration-700 cursor-pointer"
         onClick={handleOpenImage}
       >
         <img
@@ -66,7 +63,7 @@ const ProjectCard = ({
       )}
 
       <div
-        className={`p-2 group ${
+        className={`relative z-10 p-2 group ${
           reverse ? fadeRight : fadeLeft
         } sm2:flex sm2:flex-col sm2:justify-between sm2:h-full ipad:justify-center ipad:max-w-[50%] md:max-w-[40%] ${
           reverse ? "sm2:text-right" : "sm2:text-left"
@@ -97,7 +94,7 @@ const ProjectCard = ({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl font-bebas text-emerald-400 hover:text-accent hover:[text-shadow:0_0_10px_rgba(59,130,246,0.9)] transition-all duration-300 inline-block cursor-pointer"
+              className="text-2xl font-bebas text-blue-50 hover:text-accent hover:[text-shadow:0_0_10px_rgba(255, 255, 255, 0.9)] transition-all duration-300 inline-block cursor-pointer"
             >
               Ir para o site
             </a>
