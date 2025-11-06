@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
 import ProjectCard from "../components/projectCards";
+import Footer from "../components/Footer"
 
 import Logo from "/Logo2-Sem-Fundo.png";
 import AlmiroWeb from "/Projects/almiro.png";
@@ -53,7 +54,7 @@ function Home() {
       <Navbar />
       <div className="flex flex-col">
         <section
-          id="firstLayer"
+          id="hero"
           className="section bg-gray-gradient flex flex-col sm2:-space-y-16 "
         >
           <img
@@ -91,7 +92,7 @@ function Home() {
         </section>
 
         <section
-          id="secondLayer"
+          id="projects"
           className="overflow-visible pt-10 section2 bg-gray-gradient-reverse flex flex-col"
           ref={section2Ref}
         >
@@ -174,6 +175,7 @@ function Home() {
             fadeLeft={fadeLeft}
           />
         </section>
+      <Footer />
       </div>
     </div>
   );

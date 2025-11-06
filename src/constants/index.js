@@ -4,7 +4,7 @@ export const navLinks = [
       title: "- - -",
     },
     {
-      id: "secondLayer",
+      id: "projects",
       title: "Projetos",
     },
     {
