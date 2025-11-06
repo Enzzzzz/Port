@@ -4,13 +4,12 @@
   --color-primary: #cfcfcf;
   --color-secondary: #f1f1f1;
   --color-tertiary: #000000;
-  --color-accent: #f1f1f1;
   --color-hover: #f1f1f1;
   --color-text: #e8f5e9;
   --color-dimWhite: rgba(255, 255, 255, 0.7);
   --color-dimBlue: rgba(9, 151, 124, 0.1);
   --color-dimRed: rgba(151, 9, 49, 0.1);
-
+  
   --font-poppins: "Poppins", sans-serif;
   --font-felix: "Felix Titling", serif;
   --font-kenyan: "Kenyan Coffee", sans-serif;
@@ -33,35 +32,30 @@
   :root {
     --background: 0 0% 5%;
     --foreground: 45 100% 98%;
-
     --card: 0 0% 8%;
     --card-foreground: 45 100% 98%;
-
     --popover: 0 0% 8%;
     --popover-foreground: 45 100% 98%;
-
     --primary: 45 95% 62%;
     --primary-foreground: 0 0% 5%;
-
     --secondary: 28 80% 52%;
     --secondary-foreground: 0 0% 98%;
-
     --muted: 0 0% 15%;
     --muted-foreground: 45 20% 70%;
-
     --accent: 28 80% 52%;
     --accent-foreground: 0 0% 98%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-card: 0 4px 20px hsla(0, 0%, 0%, 0.5);
+    --shadow-glow: 0 0 40px hsla(200, 20%, 40%, 0.3);
   }
 
   html,
   body {
     background-color: var(--color-tertiary);
-    color: var(--color-dimWhite);
+    color: hsl(var(--foreground));
     font-family: "Poppins", system-ui, sans-serif;
     scroll-behavior: smooth;
   }
@@ -201,43 +195,23 @@
     justify-items: center;
   }
 
-  .text-gradient {
-    background: radial-gradient(
-      64.18% 64.18% at 71.16% 35.69%,
-      #c3dbff 0.89%,
-      #84b4fc 17.23%,
-      #5997f5 42.04%,
-      #377de7 55.12%,
-      #1557bb 71.54%,
-      #021127 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    .card-portfolio {
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
   }
 
-  .bg-red-gradient {
-    background: linear-gradient(
-      157.81deg,
-      #ffc3c3 -43.27%,
-      #fc8484 -21.24%,
-      #f55959 12.19%,
-      #e73737 29.82%,
-      #bb1515 51.94%,
-      #4b0101 90.29%
-    );
+  .card-portfolio:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
   }
 
-  .bg-red-gradient-reverse {
-    background: linear-gradient(
-      157.81deg,
-      #4b0101 -43.27%,
-      #bb1515 -21.24%,
-      #e73737 12.19%,
-      #f55959 29.82%,
-      #fc8484 51.94%,
-      #ffc3c3 90.29%
-    );
+    .hover-glow {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
   }
 
   .bg-gray-gradient {
@@ -261,30 +235,6 @@
       #1b1b1b 29.82%,
       #131313 51.94%,
       #000000 90.29%
-    );
-  }
-
-  .bg-green-gradient {
-    background: linear-gradient(
-      157.81deg,
-      #0e300a -43.27%,
-      #0e2e0e -21.24%,
-      #031b02 12.19%,
-      #02200a 29.82%,
-      #071108 51.94%,
-      #070f08 90.29%
-    );
-  }
-
-  .bg-green-gradient-reverse {
-    background: linear-gradient(
-      157.81deg,
-      #070f08 -43.27%,
-      #071108 -21.24%,
-      #02200a 12.19%,
-      #031b02 29.82%,
-      #0e2e0e 51.94%,
-      #0e300a 90.29%
     );
   }
 }
