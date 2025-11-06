@@ -1,16 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
 import ProjectCard from "../components/projectCards";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import Hero from "../components/Hero"
 
-import Logo from "/Logo2-Sem-Fundo.png";
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
 import Bloxstore from "/Projects/bloxstore.png";
 
 function Home() {
   const textRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(true);
 
   const section2Ref = useRef(null);
   const [isVisible2, setIsVisible2] = useState(false);
@@ -30,9 +29,7 @@ function Home() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target === textRef.current) {
-            setIsVisible(entry.isIntersecting);
-          } else if (entry.target === section2Ref.current) {
+          if (entry.target === section2Ref.current) {
             setIsVisible2(entry.isIntersecting);
           }
         });
@@ -53,44 +50,7 @@ function Home() {
     <div className="">
       <Navbar />
       <div className="flex flex-col">
-        <section
-          id="hero"
-          className="section bg-gray-gradient flex flex-col sm2:-space-y-16 "
-        >
-          <img
-            src={Logo}
-            ref={textRef}
-            className={`w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl drop-shadow-[0_0_20px_#9e9e9e] hover:drop-shadow-[0_0_35px_#f1f1f1] transition-all duration-700 ${
-              isVisible
-                ? "animate-fade-in-right opacity-100"
-                : "animate-fade-out-left opacity-0"
-            }`}
-            alt="Logo"
-          />
-          <div
-            ref={textRef}
-            className={`transition-all duration-700 ${
-              isVisible
-                ? "animate-fade-in-left opacity-100"
-                : "animate-fade-out-right opacity-0"
-            }`}
-          >
-            <h1 className="text-4xl font-bebas text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-blue-200 to-zinc-200 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient">
-              Welcome to my
-              <p
-                className="text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-blue-200 to-zinc-200 cursor-pointer font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
-                onClick={() =>
-                  document
-                    .querySelector("#secondLayer")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Portfolio
-              </p>
-            </h1>
-          </div>
-        </section>
-
+        <Hero />
         <section
           id="projects"
           className="overflow-visible pt-10 section2 bg-gray-gradient-reverse flex flex-col"
@@ -175,7 +135,7 @@ function Home() {
             fadeLeft={fadeLeft}
           />
         </section>
-      <Footer />
+        <Footer />
       </div>
     </div>
   );
