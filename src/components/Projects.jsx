@@ -1,11 +1,30 @@
 import { useEffect, useRef, useState } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Wrench } from "lucide-react";
 
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
 import Bloxstore from "/Projects/bloxstore.png";
 
 const Projects = () => {
+  const ButtonGitUnable = () => (
+    <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-not-allowed bg-red-500/30 hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
+      <Github className="mr-2 h-4 w-4" />
+      Código Indisponível
+    </button>
+  );
+  const ButtonGitBuild = () => (
+    <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-not-allowed bg-yellow-500/10 hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
+      <Github className="mr-2 h-4 w-4" />
+      Código em Breve
+    </button>
+  );
+  const ProjectBuilding = () => (
+    <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-not-allowed bg-yellow-300/10 border border-input text-accent/70 hover:text-accent hover:bg-primary/40">
+      <Wrench className="mr-2 h-4 w-4" />
+      Projeto em Desenvolvimento
+    </button>
+  );
+
   const projects = [
     {
       title: "Almiro Fragoso Advocacia",
@@ -45,7 +64,6 @@ const Projects = () => {
 
   const projectRef = useRef(null);
   const [isVisible2, setIsVisible2] = useState(false);
-
   useEffect(() => {
     const projectElement = projectRef.current;
 
@@ -74,16 +92,11 @@ const Projects = () => {
       ref={projectRef}
     >
       <div className="container mx-auto">
-        <div className="text-center mb-16 "
-        >
-          <h2
-            className="font-bebas text-center text-text font-bold text-5xl ipad:text-6xl transition-all duration-700"
-          >
+        <div className="text-center mb-16 ">
+          <h2 className="font-bebas text-center text-text font-bold text-5xl ipad:text-6xl transition-all duration-700">
             Meus Projetos
           </h2>
-          <p
-            className="text-muted-foreground fade-in text-center text-lg max-w-2xl w-[95%] mx-auto"
-          >
+          <p className="text-muted-foreground fade-in text-center text-lg max-w-2xl w-[95%] mx-auto">
             Confira alguns dos projetos que desenvolvi, demonstrando minhas
             habilidades em front-end
           </p>
@@ -92,8 +105,9 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`card-portfolio border-2 rounded-xl border-muted-foreground/20 hover:border-muted-foreground group bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.1),_transparent_90%)] ${isVisible2 ? "fade-in opacity-100" : ""}`}
-              
+              className={`card-portfolio border-2 rounded-xl border-muted-foreground/20 hover:border-muted-foreground group bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.1),_transparent_90%)] ${
+                isVisible2 ? "fade-in opacity-100" : ""
+              }`}
             >
               <div className="relative overflow-hidden h-64 rounded-t-xl">
                 <img
@@ -101,7 +115,7 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover rounded-t-xl overflow-hidden object-top transition-transform duration-300 group-hover:scale-110 group-hover:opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               <div className="p-6 border-t border-muted-foreground/30">
@@ -124,7 +138,14 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <a
+                  {(() => {
+                    if (index === 2) {
+                      return (
+                          <ProjectBuilding />
+                      );
+                    } else {
+                      return (
+                        <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -134,16 +155,19 @@ const Projects = () => {
                       Ver Projeto
                     </button>
                   </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-pointer hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
-                      <Github className="mr-2 h-4 w-4" />
-                      Código
-                    </button>
-                  </a>
+                      );
+                    }
+                  })()}
+
+                  {(() => {
+                    if (index === 2) {
+                      return (
+                          <ButtonGitBuild />
+                      );
+                    } else {
+                      return <ButtonGitUnable />;
+                    }
+                  })()}
                 </div>
               </div>
             </div>
