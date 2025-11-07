@@ -41,7 +41,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="w-full flex py-3 justify-between items-center navbar absolute md:fixed shadow-xl shadow-tertiary/5 top-0 left-0 z-50">
+    <nav className="w-full flex py-3 justify-between bg-[#0d0d0d]/60 backdrop-blur-md items-center absolute md:fixed shadow-xl shadow-tertiary/5 top-0 left-0 z-50">
       <ul>
         <li>
           <a href="/">
@@ -107,7 +107,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
