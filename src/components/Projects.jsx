@@ -5,7 +5,7 @@ import YulBot from "/Projects/yulbot.png";
 import Bloxstore from "/Projects/bloxstore.png";
 
 const Projects = () => {
-    
+
   const section2Ref = useRef(null);
   const [isVisible2, setIsVisible2] = useState(false);
 
@@ -41,7 +41,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="overflow-visible pt-10 section2 bg-gray-gradient-reverse flex flex-col"
+      className="overflow-visible pt-10 section2 flex flex-col"
       ref={section2Ref}
     >
       <div className="mb-5 sm2:mb-2">

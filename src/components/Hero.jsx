@@ -44,25 +44,27 @@ const Hero = () => {
       />
       <div
         ref={textRef}
-        className={`transition-all duration-700 ${
+      >
+        <h1 className={`text-4xl font-bebas text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-blue-200 to-zinc-200 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient transition-all duration-700 ${
           isVisible
             ? "animate-fade-in-left opacity-100"
             : "animate-fade-out-right opacity-0"
-        }`}
-      >
-        <h1 className="text-4xl font-bebas text-center m-10 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-blue-200 to-zinc-200 sm:text-4xl lg:text-5xl xl:text-7xl animate-gradient">
+        }`}>
           Welcome to my
           <p
             className="text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-blue-200 to-zinc-200 cursor-pointer font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
             onClick={() =>
               document
-                .querySelector("#secondLayer")
+                .querySelector("#projects")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
             Portfolio
           </p>
         </h1>
+        <p className="text-xl md:text-2xl text-text/70 font-bebas text-center mb-12 max-w-2xl mx-auto fade-in">
+          Desenvolvedor Front-End especializado em criar experiências digitais únicas e modernas
+        </p>
       </div>
     </section>
   );
