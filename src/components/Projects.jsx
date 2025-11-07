@@ -42,7 +42,7 @@ const Projects = () => {
       image: YulBot,
       tags: ["React", "JavaScript", "API Integration", "Tailwind CSS"],
       liveUrl: "https://yulbot.vercel.app/",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Enzzzzz/YulbotSite",
     },
     {
       title: "BloxStore",
@@ -58,7 +58,7 @@ const Projects = () => {
         "Payment System",
       ],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Enzzzzz/Blox-Store",
     },
   ];
 
@@ -137,35 +137,42 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex flex-col sm2:flex-row gap-3">
                   {(() => {
                     if (index === 2) {
-                      return (
-                          <ProjectBuilding />
-                      );
+                      return <ProjectBuilding />;
                     } else {
                       return (
                         <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-pointer hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Ver Projeto
-                    </button>
-                  </a>
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-pointer hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Ver Projeto
+                          </button>
+                        </a>
                       );
                     }
                   })()}
 
                   {(() => {
-                    if (index === 2) {
-                      return (
-                          <ButtonGitBuild />
-                      );
-                    } else {
+                    if (index === 0) {
                       return <ButtonGitUnable />;
+                    } else {
+                      return (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-pointer hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
+                            <Github className="mr-2 h-4 w-4" />
+                            Ver Código
+                          </button>
+                        </a>
+                      );
                     }
                   })()}
                 </div>
