@@ -37,7 +37,7 @@ const About = () => {
     <section id="about" className="py-20 px-4 md:px-8 lg:px-16">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-text">
+          <h2 className="text-4xl md:text-5xl font-bebas font-bold mb-4 text-text">
             Sobre Mim
           </h2>
           <p className="text-text text-lg max-w-3xl mx-auto">
@@ -50,7 +50,7 @@ const About = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card-portfolio bg-card border border-border rounded-lg overflow-hidden p-6 text-center hover-glow"
+              className="card-portfolio bg-[#141414] border border-border rounded-lg overflow-hidden p-6 text-center hover:shadow-lg hover:shadow-zinc-100"
             >
               <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2 text-text">{feature.title}</h3>
