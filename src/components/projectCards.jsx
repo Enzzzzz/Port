@@ -30,7 +30,7 @@ const ProjectCard = ({
     >
 
       <div
-        className="relative z-10 w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl  overflow-hidden hover:drop-shadow-[0_0_8px_#f1f1f1] transition-all duration-700 cursor-pointer"
+        className="relative z-10 w-[280px] h-[280px] sm2:w-[450px] sm2:h-[230px] sm2:min-h-[230px] sm2:min-w-[300px] ipad:h-[300px] ipad:min-w-[320px] rounded-4xl overflow-hidden hover:drop-shadow-[0_0_8px_#f1f1f1] transition-all duration-700 cursor-pointer"
         onClick={handleOpenImage}
       >
         <img

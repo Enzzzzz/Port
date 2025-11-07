@@ -1,29 +1,58 @@
 import { useEffect, useRef, useState } from "react";
-import ProjectCard from "../components/projectCards";
+import { ExternalLink, Github } from "lucide-react";
+
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
 import Bloxstore from "/Projects/bloxstore.png";
 
 const Projects = () => {
+  const projects = [
+    {
+      title: "Almiro Fragoso Advocacia",
+      description:
+        "Landing page de advocacia multi-page desenvolvida em ReactJS e TailwindCSS, com design responsivo e links diretos para contato via WhatsApp.",
+      image: AlmiroWeb,
+      tags: ["React", "JavaScript", "Tailwind CSS"],
+      liveUrl: "https://www.almirofragosoadvocacia.com.br/",
+      githubUrl: "#",
+    },
+    {
+      title: "Discord Bot Website",
+      description:
+        "Website moderno multi-page para bot de Discord feito em ReactJS e TailwindCSS, com design limpo e animações suaves, com sistema de porcentagem de desenvolvimento e commits em tempo real.",
+      image: YulBot,
+      tags: ["React", "JavaScript", "API Integration", "Tailwind CSS"],
+      liveUrl: "https://yulbot.vercel.app/",
+      githubUrl: "#",
+    },
+    {
+      title: "BloxStore",
+      description:
+        "Loja virtual de Roblox feito em ReactJS e TailwindCSS, com design responsivo com sistema de banco de dados para as funcionalidades de Registro e Login.",
+      image: Bloxstore,
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "JavaScript",
+        "Database",
+        "Login System",
+        "Payment System",
+      ],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+  ];
 
-  const section2Ref = useRef(null);
+  const projectRef = useRef(null);
   const [isVisible2, setIsVisible2] = useState(false);
 
-  const fadeLeft = isVisible2
-    ? "animate-fade-in-left opacity-100"
-    : "animate-fade-out-right opacity-0";
-
-  const fadeRight = isVisible2
-    ? "animate-fade-in-right opacity-100"
-    : "animate-fade-out-left opacity-0";
-
   useEffect(() => {
-    const section2Element = section2Ref.current;
+    const projectElement = projectRef.current;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target === section2Ref.current) {
+          if (entry.target === projectRef.current) {
             setIsVisible2(entry.isIntersecting);
           }
         });
@@ -31,96 +60,96 @@ const Projects = () => {
       { threshold: 0.3 }
     );
 
-    if (section2Element) observer.observe(section2Element);
+    if (projectElement) observer.observe(projectElement);
 
     return () => {
-      if (section2Element) observer.unobserve(section2Element);
+      if (projectElement) observer.unobserve(projectElement);
     };
   }, []);
 
   return (
     <section
       id="projects"
-      className="overflow-visible pt-10 section2 flex flex-col"
-      ref={section2Ref}
+      className="py-20 px-4 md:px-8 lg:px-16 bg-secondary/20"
+      ref={projectRef}
     >
-      <div className="mb-5 sm2:mb-2">
-        <h1
-          className={`font-bebas text-text font-bold text-5xl ipad:text-6xl transition-all duration-700`}
+      <div className="container mx-auto">
+        <div className="text-center mb-16 "
         >
-          Projetos
-        </h1>
+          <h2
+            className="font-bebas text-center text-text font-bold text-5xl ipad:text-6xl transition-all duration-700"
+          >
+            Meus Projetos
+          </h2>
+          <p
+            className="text-muted-foreground fade-in text-center text-lg max-w-2xl w-[95%] mx-auto"
+          >
+            Confira alguns dos projetos que desenvolvi, demonstrando minhas
+            habilidades em front-end
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className={`card-portfolio border-2 rounded-xl border-muted-foreground/20 hover:border-muted-foreground group bg-[radial-gradient(circle_at_center,_rgba(153,153,153,0.1),_transparent_90%)] ${isVisible2 ? "fade-in opacity-100" : ""}`}
+              
+            >
+              <div className="relative overflow-hidden h-64 rounded-t-xl">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-t-xl overflow-hidden object-top transition-transform duration-300 group-hover:scale-110 group-hover:opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+              </div>
+
+              <div className="p-6 border-t border-muted-foreground/30">
+                <h3 className="text-2xl mb-2 text-text font-bebas">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground mb-4 font-poppins">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-3">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-pointer hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Ver Projeto
+                    </button>
+                  </a>
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-pointer hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
+                      <Github className="mr-2 h-4 w-4" />
+                      Código
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <ProjectCard
-        reverse={true}
-        image={AlmiroWeb}
-        title="Almiro Fragoso Advocacia"
-        titleColor="#ffffff"
-        description={
-          <>
-            Landing page de advocacia multi-page desenvolvida em{" "}
-            <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
-              ReactJS
-            </span>{" "}
-            e{" "}
-            <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
-              TailwindCSS
-            </span>
-            , com design responsivo e links diretos para contato via WhatsApp.
-          </>
-        }
-        link="https://www.almirofragosoadvocacia.com.br/"
-        fadeRight={fadeRight}
-        fadeLeft={fadeLeft}
-      />
-
-      <ProjectCard
-        image={YulBot}
-        title="Discord Bot Website"
-        titleColor="#ffffff"
-        description={
-          <>
-            Website moderno multi-page para bot de Discord feito em{" "}
-            <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)0.9)] transition-all duration-300">
-              ReactJS
-            </span>{" "}
-            e{" "}
-            <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
-              TailwindCSS
-            </span>
-            , com design limpo e animações suaves, com sistema de porcentagem de
-            desenvolvimento e commits em tempo real.
-          </>
-        }
-        link="https://yulbot.vercel.app/"
-        fadeRight={fadeRight}
-        fadeLeft={fadeLeft}
-      />
-
-      <ProjectCard
-        reverse={true}
-        isDev={true}
-        image={Bloxstore}
-        title="BloxStore"
-        titleColor="#ffffff"
-        description={
-          <>
-            Loja virtual de Roblox feito em{" "}
-            <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
-              ReactJS
-            </span>{" "}
-            e{" "}
-            <span className="text-zinc-100 font-extrabold group-hover:shadow-blue-200 group-hover:[text-shadow:0_0_20px_rgba(255, 255, 255, 0.9)] transition-all duration-300">
-              TailwindCSS
-            </span>
-            , com design responsivo com sistema de banco de dados para as
-            funcionalidades de Registro e Login.
-          </>
-        }
-        link=""
-        fadeRight={fadeRight}
-        fadeLeft={fadeLeft}
-      />
     </section>
   );
 };
