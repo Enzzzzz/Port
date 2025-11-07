@@ -40,27 +40,27 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bebas font-bold mb-4 text-text">
             Sobre Mim
           </h2>
-          <p className="text-text text-lg max-w-3xl mx-auto">
+          <p className="text-text text-lg max-w-3xl mx-auto font-poppins">
             Sou um desenvolvedor front-end apaixonado por criar experiências web excepcionais.
             Com foco em qualidade, performance e design moderno, transformo ideias em realidade digital.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-poppins mb-16">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card-portfolio bg-[#141414] border border-border rounded-lg overflow-hidden p-6 text-center hover:shadow-lg hover:shadow-zinc-100"
+              className="card-portfolio bg-[#141414] border border-border rounded-lg overflow-hidden p-6 text-center hover:shadow-xl hover:shadow-zinc-800"
             >
               <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-text">{feature.title}</h3>
+              <h3 className="text-xl mb-2 text-text font-bebas">{feature.title}</h3>
               <p className="text-text text-sm">{feature.description}</p>
             </div>
           ))}
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold mb-8 text-center text-foreground">
+          <h3 className="text-3xl font-bold mb-8 font-bebas text-center text-text">
             Habilidades Técnicas
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -72,7 +72,7 @@ const About = () => {
                 </div>
                 <div className="h-2 bg-[#3b3b3b] rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-primary/55 to-blue-200 transition-all duration-1000 ease-out"
+                    className="h-full bg-gradient-to-r from-primary to-blue-200 transition-all duration-1000 ease-out"
                     style={{ width: `${skill.level}%` }}
                   />
                 </div>
