@@ -1,4 +1,6 @@
-import { Github, Instagram, Mail, Phone, Code } from "lucide-react";
+import { Mail, Phone, Code } from "lucide-react";
+import { FaInstagram, FaGithub } from "react-icons/fa";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -81,7 +83,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-smooth group"
               >
-                <Instagram className="w-5 h-5 text-primary group-hover:scale-110 transition-smooth" />
+                <FaInstagram className="w-5 h-5 text-primary group-hover:scale-110 transition-smooth" />
               </a>
               <a
                 href="https://github.com/Enzzzzz"
@@ -89,7 +91,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-smooth group"
               >
-                <Github className="w-5 h-5 text-primary group-hover:scale-110 transition-smooth" />
+                <FaGithub className="w-5 h-5 text-primary group-hover:scale-110 transition-smooth" />
               </a>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
@@ -104,8 +106,7 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {currentYear} Maia Dev. Todos os direitos reservados.
             </p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
-            </div>
+            <div className="flex gap-6 text-sm text-muted-foreground"></div>
           </div>
           <p className="text-xs text-muted-foreground text-center mt-4">
             Este portfólio é apenas para fins de demonstração. Todo o código e

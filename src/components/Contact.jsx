@@ -1,4 +1,5 @@
-import { Mail, Phone, Github, Instagram } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import { FaInstagram, FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -36,9 +37,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", url: "https://github.com/Enzzzzz" },
+    { icon: FaGithub, label: "GitHub", url: "https://github.com/Enzzzzz" },
     {
-      icon: Instagram,
+      icon: FaInstagram,
       label: "Instagram",
       url: "https://www.instagram.com/maia.dev/",
     },
