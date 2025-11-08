@@ -48,7 +48,7 @@ const Contact = () => {
     <section id="contact" className="py-20 px-4 md:px-8 lg:px-16 bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-4 font-bebas text-text">
+          <h2 className="text-4xl md:text-5xl mb-4 font-poppins font-bold text-text">
             Entre em Contato
           </h2>
           <p className="text-muted-foreground font-poppins text-lg max-w-2xl mx-auto">
@@ -60,7 +60,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="space-y-8">
             <div>
-              <h3 className="text-3xl mb-6 font-bebas text-text">
+              <h3 className="text-3xl mb-6 font-bold font-poppins text-text">
                 Informações de Contato
               </h3>
               <div className="space-y-4">
@@ -86,7 +86,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h3 className="text-3xl font-bebas mb-6 text-foreground">
+              <h3 className="text-3xl font-poppins mb-6 text-foreground">
                 Redes Sociais
               </h3>
               <div className="flex gap-4">

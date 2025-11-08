@@ -110,7 +110,7 @@ const Projects = () => {
     >
       <div className="container mx-auto">
         <div className="text-center mb-16 ">
-          <h2 className="font-bebas text-center text-text font-bold text-5xl ipad:text-6xl transition-all duration-700">
+          <h2 className="font-poppins text-center text-text font-bold text-5xl ipad:text-6xl transition-all duration-700">
             Meus Projetos
           </h2>
           <p className="text-muted-foreground fade-in text-center text-lg max-w-2xl w-[95%] mx-auto">
@@ -136,7 +136,7 @@ const Projects = () => {
               </div>
 
               <div className="p-6 border-t border-muted-foreground/30">
-                <h3 className="text-2xl mb-2 text-text font-bebas">
+                <h3 className="text-2xl mb-2 text-text font-poppins">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground mb-4 font-poppins">
