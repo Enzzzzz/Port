@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { ExternalLink, Github, Wrench } from "lucide-react";
+import { ExternalLink, Wrench } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
@@ -9,13 +10,13 @@ import Port from "/Projects/port.png";
 const Projects = () => {
   const ButtonGitUnable = () => (
     <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-not-allowed bg-red-500/30 hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
-      <Github className="mr-2 h-4 w-4" />
+      <FaGithub className="mr-2 h-4 w-4" />
       Código Indisponível
     </button>
   );
   const ButtonGitBuild = () => (
     <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-not-allowed bg-yellow-500/10 hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
-      <Github className="mr-2 h-4 w-4" />
+      <FaGithub className="mr-2 h-4 w-4" />
       Código em Breve
     </button>
   );
@@ -192,7 +193,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                         >
                           <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-pointer hover:bg-primary/40 border border-input text-accent/70 hover:text-accent">
-                            <Github className="mr-2 h-4 w-4" />
+                            <FaGithub className="mr-2 h-4 w-4" />
                             Ver Código
                           </button>
                         </a>
