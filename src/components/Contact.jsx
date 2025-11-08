@@ -33,7 +33,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "contatenzz@gmail.com" },
-    { icon: Phone, label: "Telefone", value: "+55 (71) 99695-2954" },
+    { icon: Phone, label: "Telefone", value: "+55 (71) " },
   ];
 
   const socialLinks = [
