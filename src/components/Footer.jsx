@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Code className="w-8 h-8 text-primary" />
               <span className="text-xl font-bebas font-bold text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-blue-200 to-zinc-200">
-                Enzo Maia
+                Maia Dev
               </span>
             </div>
             <p className="text-muted-foreground text-sm">

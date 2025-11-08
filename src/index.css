@@ -302,3 +302,34 @@
     color: var(--color-dimRed);
   }
 }
+
+
+@keyframes sheet-slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sheet-slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+[data-state="open"].sheet-left {
+  animation: sheet-slide-in-left 0.4s ease-out forwards;
+}
+
+[data-state="closed"].sheet-left {
+  animation: sheet-slide-out-left 0.4s ease-in forwards;
+}

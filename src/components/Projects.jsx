@@ -55,7 +55,7 @@ const Projects = () => {
         "JavaScript",
         "Database",
         "Login System",
-        "Payment System",
+        "Payment System Soon",
       ],
       liveUrl: "#",
       githubUrl: "https://github.com/Enzzzzz/Blox-Store",
