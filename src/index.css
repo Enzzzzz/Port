@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-primary: #cfcfcf;
@@ -13,6 +16,17 @@
   --color-dimBlue: rgba(9, 151, 124, 0.1);
   --color-dimRed: rgba(151, 9, 49, 0.1);
   --color-card: #141414;
+
+  --color-foreground: #fffbe6;
+  --color-card-foreground: #fffbe6;
+  --color-popover: #141414;
+  --color-popover-foreground: #fffbe6;
+  --color-primary-foreground: #0d0d0d;
+  --color-secondary-foreground: #fafafa;
+  --color-muted: #262626;
+  --color-accent-foreground: #fafafa;
+  --color-destructive: #e64646;
+  --color-destructive-foreground: #fafafa;
 
   --font-poppins: "Poppins", sans-serif;
   --font-felix: "Felix Titling", serif;
@@ -303,7 +317,6 @@
   }
 }
 
-
 @keyframes sheet-slide-in-left {
   from {
     transform: translateX(-100%);
@@ -327,7 +340,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -342,3 +356,4 @@
 [data-state="closed"].sheet-left {
   animation: sheet-slide-out-left 0.4s ease-in forwards;
 }
+
