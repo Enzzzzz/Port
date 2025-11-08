@@ -4,6 +4,7 @@ import { ExternalLink, Github, Wrench } from "lucide-react";
 import AlmiroWeb from "/Projects/almiro.png";
 import YulBot from "/Projects/yulbot.png";
 import Bloxstore from "/Projects/bloxstore.png";
+import Port from "/Projects/port.png";
 
 const Projects = () => {
   const ButtonGitUnable = () => (
@@ -31,7 +32,7 @@ const Projects = () => {
       description:
         "Landing page de advocacia multi-page desenvolvida em ReactJS e TailwindCSS, com design responsivo e links diretos para contato via WhatsApp.",
       image: AlmiroWeb,
-      tags: ["React", "JavaScript", "Tailwind CSS"],
+      tags: ["React", "JavaScript", "Tailwind CSS", "Multi-Page", "UI/UX", "Responsive Design"],
       liveUrl: "https://www.almirofragosoadvocacia.com.br/",
       githubUrl: "#",
     },
@@ -40,7 +41,7 @@ const Projects = () => {
       description:
         "Website moderno multi-page para bot de Discord feito em ReactJS e TailwindCSS, com design limpo e animações suaves, com sistema de porcentagem de desenvolvimento e commits em tempo real.",
       image: YulBot,
-      tags: ["React", "JavaScript", "API Integration", "Tailwind CSS"],
+      tags: ["React", "JavaScript", "API Integration", "Tailwind CSS", "Multi-Page", "UI/UX", "Responsive Design"],
       liveUrl: "https://yulbot.vercel.app/",
       githubUrl: "https://github.com/Enzzzzz/YulbotSite",
     },
@@ -55,10 +56,26 @@ const Projects = () => {
         "JavaScript",
         "Database",
         "Login System",
-        "Payment System Soon",
+        "UI/UX",
+        "Responsive Design"
       ],
       liveUrl: "#",
       githubUrl: "https://github.com/Enzzzzz/Blox-Store",
+    },
+    {
+      title: "Portfólio",
+      description:
+        "Meu portfólio pessoal, criado com ReactJS e TailwindCSS, onde compartilho meus projetos, minha jornada como desenvolvedor e minha paixão por criar interfaces modernas e intuitivas.",
+      image: Port,
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "JavaScript",
+        "UI/UX",
+        "Responsive Design"
+      ],
+      liveUrl: "#",
+      githubUrl: "https://github.com/Enzzzzz/Port",
     },
   ];
 
@@ -88,7 +105,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-20 px-4 md:px-8 lg:px-16 bg-secondary/20"
+      className="py-20 px-4 md:px-8 lg:px-16 bg-background"
       ref={projectRef}
     >
       <div className="container mx-auto">
@@ -139,7 +156,7 @@ const Projects = () => {
 
                 <div className="flex flex-col sm2:flex-row gap-3">
                   {(() => {
-                    if (index === 2) {
+                    if ([2, 3].includes(index)) {
                       return <ProjectBuilding />;
                     } else {
                       return (

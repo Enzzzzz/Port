@@ -34,7 +34,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 md:px-8 lg:px-16">
+    <section id="about" className="py-20 bg-background px-4 md:px-8 lg:px-16">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bebas font-bold mb-4 text-text">
