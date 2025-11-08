@@ -156,7 +156,14 @@ const Projects = () => {
 
                 <div className="flex flex-col sm2:flex-row gap-3">
                   {(() => {
-                    if ([2, 3].includes(index)) {
+                    if (index === 3) {
+                      return (
+                          <button className="h-9 rounded-md px-3 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-accent transition-colors focus-visible:outline-none focus-visible:ring-2focus-visible:ring-offset-2 cursor-not-allowed bg-background/80 opacity-50 border border-input text-accent/70 hover:text-accent">
+                            Este Projeto
+                          </button>
+                      );
+
+                    } else if ([2, 3].includes(index)) {
                       return <ProjectBuilding />;
                     } else {
                       return (
