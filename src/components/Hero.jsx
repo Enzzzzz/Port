@@ -37,7 +37,7 @@ const Hero = () => {
         ref={textRef}
         className={`w-64 sm2:w-44 sm:w-64 md:w-[450px] 2xlg:w-[550px] rounded-4xl drop-shadow-[0_0_20px_#9e9e9e] hover:drop-shadow-[0_0_35px_#f1f1f1] transition-all duration-700 ${
           isVisible
-            ? " opacity-100 animate-[float_3s_ease-in-out_infinite]"
+            ? " opacity-100 animate-fade-in-right"
             : "animate-fade-out-left opacity-0"
         }`}
         alt="Logo"
@@ -50,7 +50,7 @@ const Hero = () => {
             ? "animate-fade-in-left opacity-100"
             : "animate-fade-out-right opacity-0"
         }`}>
-          Welcome to my
+          Bem-vindo ao meu
           <p
             className="text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-blue-200 to-zinc-200 cursor-pointer font-extrabold hover:animate-none animate-pulse [animation-duration:6s]"
             onClick={() =>
