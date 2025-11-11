@@ -4,16 +4,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Analytics } from "@vercel/analytics/react"
 import './index.css'
 import Home from './routes/Home'
-import MainHome from './routes/MainHome'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />
-  },
-  {
-    path: "/dev",
-    element: <MainHome />
   }
 ]);
 
