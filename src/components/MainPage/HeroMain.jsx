@@ -21,7 +21,7 @@ const HeroMain = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Sites modernos, responsivos e otimizados para converter visitantes em clientes. 
+            Criamos sites modernos, responsivos e otimizados para converter visitantes em clientes. 
             Da ideia ao lançamento, com suporte completo.
           </p>
           
@@ -39,7 +39,7 @@ const HeroMain = () => {
               className="border-border hover:bg-secondary hover:text-secondary-foreground"
               asChild
             >
-              <a href="#contact">Falar com Especialista</a>
+              <a href="#contact">Entre em Contato</a>
             </Button>
           </div>
         </div>
